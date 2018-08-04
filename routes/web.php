@@ -12,9 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::prefix('individual')->group(function () {
+    Route::get('/', 'Individual\AccountController@index');
+    Route::get('/dashboard', 'Individual\AccountController@dashboard')->name('individual.dashboard');
+});

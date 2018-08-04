@@ -6,7 +6,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Benim Parkım | benimparkim.com</title>
+    <title>Benim Parkım | Account</title>
 
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="{{ asset('semantic/dist/semantic.min.css') }}">
@@ -16,9 +16,13 @@
       <!-- Row: The Begin -->
       <div style="padding-bottom: 0" class="row">
         <div class="sixteen wide column">
-          <!-- Top Main Menu: The Begin -->
+          <!-- Top Menu: The Begin -->
           @include('_includes.menu')
-          <!-- Top Main Menu: The End -->
+          <!-- Top Menu: The End -->
+
+          <!-- Navbar: The Begin -->
+          @include('_includes.navbar')
+          <!-- Navbar: The End -->
 
           <!-- Main Content: The Begin -->
           @yield('content')
@@ -30,7 +34,6 @@
         </div>
       </div>
       <!-- Row: The End -->
-
     </div>
 
     <!-- Scripts -->
