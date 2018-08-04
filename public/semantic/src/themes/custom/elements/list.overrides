@@ -1,0 +1,49 @@
+/*******************************
+         Theme Overrides
+*******************************/
+
+/*-------------------
+      Elements
+--------------------*/
+
+/* Meta */
+.ui.list .item .meta {
+  color: @mutedTextColor;
+  font-size: @relativeSmall;
+}
+
+/*-------------------
+      Variations
+--------------------*/
+
+/* Block Item */
+.ui.block.list .item {
+  padding: 1em;
+  border-bottom: 1px solid @internalBorderColor;
+}
+
+/* Block Last Item */
+.ui.block.list .item:last-child {
+  border-bottom: none;
+}
+
+/* Block Meta */
+.ui.block.list .item .meta {
+  margin: 0 0 .25em 0;
+}
+
+/* Block Header in Floated Content */
+.ui.block.list .item > .right.floated.content .header {
+  font-weight: @normal;
+  font-size: @relativeLarge;
+}
+
+/*-------------------
+        States
+--------------------*/
+
+/* Block Item Hover */
+.ui.block.list .item:hover {
+  background: @offWhite;
+  cursor: pointer;
+}

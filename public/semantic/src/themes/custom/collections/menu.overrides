@@ -1,0 +1,18 @@
+/*******************************
+         Theme Overrides
+*******************************/
+
+/*--------------
+     Types
+---------------*/
+
+/* Labeled Icon Menu Active Item */
+.ui.icon.labeled.menu .active.item {
+  color: @white;
+  background: @green;
+}
+
+/* Secondary Menu Active Last Item */
+.ui.secondary.menu .active.item:last-child {
+  border-radius: .2em;
+}

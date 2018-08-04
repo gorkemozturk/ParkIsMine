@@ -1,0 +1,27 @@
+/*******************************
+         Theme Overrides
+*******************************/
+
+/*-------------------
+      Variations
+--------------------*/
+
+/* Fitted */
+.ui.fitted.segment {
+  padding: 0;
+}
+
+/* Horizontally Fitted */
+.ui.horizontally.fitted.segment {
+  padding: 1em 0;
+}
+
+/* Relaxed */
+.ui.relaxed.segment {
+  padding: 5em;
+}
+
+/* Very Relaxed */
+.ui.very.relaxed.segment {
+  padding: 10em;
+}

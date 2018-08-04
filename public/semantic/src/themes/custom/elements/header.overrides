@@ -1,0 +1,22 @@
+/*******************************
+         Theme Overrides
+*******************************/
+
+/*-------------------
+      Variations
+--------------------*/
+
+/* Light */
+.ui.light.header {
+  font-weight: 300;
+}
+
+/* Normal */
+.ui.normal.header {
+  font-weight: @normal;
+}
+
+/* Black */
+.ui.black.header {
+  font-weight: 900;
+}
