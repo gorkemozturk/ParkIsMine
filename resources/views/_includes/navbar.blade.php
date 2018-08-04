@@ -1,10 +1,10 @@
 <div class="ui secondary attached center aligned fitted segment">
   <div class="mini ui compact icon labeled menu">
-    <a class="active item">
+    <a href="{{ route('individual.dashboard') }}" class="{{ request()->is('*/dashboard') ? 'active' : '' }} item">
       <i class="user outline icon"></i>
       Dashboard
     </a>
-    <a class="item">
+    <a href="{{ route('individual.bookings') }}" class="{{ request()->is('*/bookings') ? 'active' : '' }} item">
       <i class="bookmark outline icon"></i>
       Bookings
     </a>
@@ -20,7 +20,7 @@
       <i class="inbox icon"></i>
       Messages
     </a>
-    <a class="item">
+    <a href="{{ route('individual.settings') }}" class="{{ request()->is('*/settings') ? 'active' : '' }} item">
       <i class="setting icon"></i>
       Settings
     </a>
