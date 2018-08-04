@@ -15,18 +15,33 @@
           Register With Facebook
         </a>
         <div class="ui horizontal divider">OR</div>
-        <form class="ui form">
-          <div class="field">
-            <label style="text-align: left">E-Mail</label>
-            <input type="text" name="mail" placeholder="E-Mail">
+        <form class="ui form" method="POST" action="{{ route('register') }}">
+          {{ csrf_field() }}
+
+          <div class="field {{ $errors->has('name') ? ' error' : '' }}">
+            <label style="text-align: left">Full Name</label>
+            <input type="text" placeholder="Name" name="name" value="{{ old('name') }}" required autofocus>
           </div>
-          <div class="field">
+          @if ($errors->has('name'))
+          <div class="ui red message">{{ $errors->first('name') }}</div>
+          @endif
+          <div class="field {{ $errors->has('email') ? ' error' : '' }}">
+            <label style="text-align: left">E-Mail Address</label>
+            <input type="text" placeholder="E-Mail Address" name="email" value="{{ old('email') }}" required autofocus>
+          </div>
+          @if ($errors->has('email'))
+          <div class="ui red message">{{ $errors->first('email') }}</div>
+          @endif
+          <div class="field {{ $errors->has('password') ? ' error' : '' }}">
             <label style="text-align: left">Password</label>
-            <input type="password" name="password" placeholder="Password">
+            <input type="password" placeholder="Password" name="password" required>
           </div>
-          <div class="field">
-            <label style="text-align: left">Re-Enter Password</label>
-            <input type="password" name="password" placeholder="Password">
+          @if ($errors->has('password'))
+          <div class="ui red message">{{ $errors->first('password') }}</div>
+          @endif
+          <div class="field {{ $errors->has('password') ? ' error' : '' }}">
+            <label style="text-align: left">Confirm Password</label>
+            <input type="password" name="password_confirmation" placeholder="Password" required>
           </div>
           <div class="field">
             <div class="ui checkbox">
@@ -45,7 +60,7 @@
           <a>ParkIsMine Terms and Conditions.</a>
         </div>
         <div class="ui attached segment">
-          <a>
+          <a href="{{ route('login') }}">
             Already have an account? <br>
             Sign in instantly.
           </a>

@@ -15,15 +15,23 @@
           Sign In With Facebook
         </a>
         <div class="ui horizontal divider">OR</div>
-        <form class="ui form">
-          <div class="field">
+        <form class="ui form" method="POST" action="{{ route('login') }}">
+          {{ csrf_field() }}
+
+          <div class="field {{ $errors->has('email') ? ' error' : '' }}">
             <label style="text-align: left">E-Mail</label>
-            <input type="text" name="mail" placeholder="E-Mail">
+            <input type="text" name="email" placeholder="E-Mail">
           </div>
-          <div class="field">
+          @if ($errors->has('email'))
+          <div class="ui red message">{{ $errors->first('email') }}</div>
+          @endif
+          <div class="field {{ $errors->has('password') ? ' error' : '' }}">
             <label style="text-align: left">Password</label>
             <input type="password" name="password" placeholder="Password">
           </div>
+          @if ($errors->has('password'))
+          <div class="ui red message">{{ $errors->first('password') }}</div>
+          @endif
           <div class="field">
             <div class="ui checkbox">
               <input type="checkbox" tabindex="0" class="hidden">
@@ -36,7 +44,7 @@
           </button>
         </form>
         <div class="ui attached segment">
-          <a>No account yey? Register instantly.</a>
+          <a href="{{ route('register') }}">No account yey? Register instantly.</a>
         </div>
         <div class="ui attached segment">
           By logging in, I agree to the <br>
